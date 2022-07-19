@@ -1,0 +1,8 @@
+flask
+numpy
+scipy
+csv
+cv2
+classification
+cancellability
+sklearn
