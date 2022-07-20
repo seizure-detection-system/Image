@@ -1,4 +1,4 @@
-from scipy.spatial.distance import distance
+from scipy.spatial import distance
 
 import csv
 # from Classification import Results
