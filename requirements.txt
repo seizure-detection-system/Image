@@ -1,7 +1,7 @@
 flask
 numpy
 scipy
-opencv-python
+opencv-python-headless
 sklearn
 pandas
 joblib
