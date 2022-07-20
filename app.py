@@ -18,7 +18,7 @@ from flask import Flask, jsonify, request
 KeyMat = []
 KeyMat1 = []
 
-with open('D:/Medical Informatics/Basics/0Nasa/Dorsal-Hand-Vein-Based-Cancellable-Biometric-Authentication-System-master/create_csv/Key01.csv') as File:
+with open('Key01.csv') as File:
     reader = csv.reader(File, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
     for row in reader:
         for i in range(0, len(row)):
@@ -30,7 +30,7 @@ KeyMat = np.array(KeyMat)
 # KeyMat = KeyMat.T
 KeyMat = normalize(KeyMat)
 
-with open('D:/Medical Informatics/Basics/0Nasa/Dorsal-Hand-Vein-Based-Cancellable-Biometric-Authentication-System-master/create_csv/Key02.csv') as File:
+with open('Key02.csv') as File:
     reader = csv.reader(File, delimiter=',', quotechar=',', quoting=csv.QUOTE_MINIMAL)
     for row in reader:
         for i in range(0, len(row)):
@@ -92,23 +92,7 @@ def euclidean_distance(v):
         #di = scipy.spatial.distance.pdist((u,v), 'euclidean')
         di = np.sqrt((v-u)**2)
         di = di.mean()
-        '''
-        if di <= 100:
-            img_id = ('acess granted for id no : ', label[x] + 1)
-            if((x)%10 == 0 ):
-                maxval = 0
-                counterval += 1
-                if di > maxval:
-                    maxval = di
-                    maxval2[counterval] = maxval
-            else:
-                if di > maxval:
-                    maxval = di
-                    maxval2[counterval] = maxval
-                    
-        else:
-            img_id = ('sorry: ', label[x] + 1)
-        '''
+ 
         
         h.append((di, x))
         
@@ -128,13 +112,7 @@ def euclidean_distance(v):
       
 
     return result
-        
-'''
-    if max(maxval2) < 50 :
-        img_class = ('Sorry we can\'t Recognize This Image')
-    else:
-        img_class = ('This Image Belongs To Class : ' + str((maxval2.index(max(maxval2))+1)) +' With Accurecy : '+ str(max(maxval2)) )
-'''
+
     
 
 app = Flask(__name__)
