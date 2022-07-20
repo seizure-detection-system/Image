@@ -1,7 +1,7 @@
 flask
 numpy
 scipy
-cv2
+opencv-python
 sklearn
 pandas
 joblib
