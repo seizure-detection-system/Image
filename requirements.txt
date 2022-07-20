@@ -1,7 +1,6 @@
 flask
 numpy
 scipy
-csv
 cv2
 sklearn
 pandas
